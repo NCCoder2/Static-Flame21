@@ -9,6 +9,11 @@
     <script src="search.js" defer></script>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Flame Network</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   </head>
 
   <body>
@@ -17,7 +22,7 @@
 
       <ul class="navbar-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="inprogress.html">About</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="inprogress.html">Games</a></li>
         <li><a href="inprogress.html">Contact</a></li>
       </ul>
@@ -39,7 +44,7 @@
           <i class="flame-icon fas fa-fire"></i>
           <p style="color:red"onclick="window.open('https://discord.gg/flameworks', '_blank');">Discord</p>
         </div>
-        <div class="flame-item">
+        <div class="flame-item" style="opacity:0.4; cursor:wait">
           <i class="flame-icon fas fa-fire"></i>
           <p style="color:lightcoral">Coming Soon</p>
         </div>
@@ -67,11 +72,23 @@
 
 <script>
    function toggleAddress() {
-      var addressElement = document.getElementById('uv-address');
-      if (addressElement.style.display === 'none') {
-        addressElement.style.display = 'block';
-      } else {
-        addressElement.style.display = 'none';
-      }
-    }
+  var addressElement = document.getElementById('uv-address');
+  if (addressElement.style.display === 'none') {
+    addressElement.style.display = 'block';
+
+    addressElement.style.opacity = '0';
+    setTimeout(function() {
+      addressElement.style.transition = 'width 1s ease-out, opacity 1s ease-out';
+      addressElement.style.opacity = '1';
+    }, 0);
+  } else {
+    addressElement.style.transition = 'width 1s ease-out, opacity 1s ease-out';
+    addressElement.style.opacity = '0';
+    setTimeout(function() {
+      addressElement.style.display = 'none';
+    }, 1000);
+  }
+}
+
+
 </script>

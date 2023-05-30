@@ -70,7 +70,7 @@
 .flames-header h1 {
   font-size: 48px;
   color: #ff6b6b;
-  margin-bottom: ;
+  
 }
 
 .flames-header p {
@@ -86,7 +86,7 @@
 
 .flames-description {
   text-align: center;
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .flames-description p {
@@ -117,6 +117,7 @@
 
 .flames-section .flame-item {
   display: inline-block;
+  cursor:default;
   text-align: center;
   margin: 0 10px; /* Add spacing here */
 }
@@ -124,7 +125,7 @@
 
 .web-input {
   background-color: transparent;
-  border: 2px solid #ff6b6b;
+  border: 2px solid #ffaa00; 
   border-radius: 10px;
   color: #fff;
   font-size: 16px;
@@ -134,14 +135,21 @@
   width: 15%;
   margin-right: 42.5%;
   margin-left: 42.1%;
-  transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.4s ease;
 }
 
-.web-input:focus {
-  border-color: #ffaa00;
+.web-input:not(:focus) {
+  border-color: #ff6b6b;
+  transition: border-color 0.25s ease;
 }
 
-.cool-input::placeholder{
+.web-input:hover {
+  border-color: #FFE043;
+}
+
+
+
+.web-input::placeholder{
   text-align: center;
 }
 
