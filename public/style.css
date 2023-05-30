@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  .glowing {
+    position: relative;
+    min-width: 700px;
+    height: 550px;
+    margin: -150px;
+    transform-origin: right;
+    animation: colorChange 5s linear infinite;
+    z-index:-100
+  }
+  
+  .glowing:nth-child(even) {
+    transform-origin: left;
+    z-index:-100
+  }
+  
+  @keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  .glowing span {
+    position: absolute;
+    top: calc(80px * var(--i));
+    left: calc(80px * var(--i));
+    bottom: calc(80px * var(--i));
+    right: calc(80px * var(--i));
+    z-index:-100;
+  }
+  
+  .glowing span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 15px;
+    height: 15px;
+    background: #f00;
+    border-radius: 50%;
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 1)::before {
+    background: rgba(134,255,0,1);
+    box-shadow: 0 0 20px rgba(134,255,0,1),
+      0 0 40px rgba(134,255,0,1),
+      0 0 60px rgba(134,255,0,1),
+      0 0 80px rgba(134,255,0,1),
+      0 0 0 8px rgba(134,255,0,.1);
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 2)::before {
+    background: rgba(255,214,0,1);
+    box-shadow: 0 0 20px rgba(255,214,0,1),
+      0 0 40px rgba(255,214,0,1),
+      0 0 60px rgba(255,214,0,1),
+      0 0 80px rgba(255,214,0,1),
+      0 0 0 8px rgba(255,214,0,.1);
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 3)::before {
+    background: rgba(0,226,255,1);
+    box-shadow: 0 0 20px rgba(0,226,255,1),
+      0 0 40px rgba(0,226,255,1),
+      0 0 60px rgba(0,226,255,1),
+      0 0 80px rgba(0,226,255,1),
+      0 0 0 8px rgba(0,226,255,.1);
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 1) {
+    animation: animate 10s alternate infinite;
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 2) {
+    animation: animate-reverse 20s alternate infinite;
+    z-index:-100;
+  }
+  
+  .glowing span:nth-child(3n + 3) {
+    animation: animate 8s alternate infinite; 
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      z-index:-100;
+    }
+  }
+  
+  @keyframes animate-reverse {
+    0% {
+      transform: rotate(360deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    100% {
+      transform: rotate(0deg);
+    z-index:-100;
+    }
+  }
+  
+  body {
+    background-color: black;
+    font-family: cursive;
+  }
+  
+  .glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+    text-overflow: inherit;
+    font-family: 'Fruktur', cursive;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #e60073, 0 0 20px blue, 0 0 30px #000F89, 0 0 40px #000F89, 0 0 50px #e60073, 0 0 60px #000F89, 0 0 35px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #000F896, 0 0 50px #ff4da6, 0 0 60px #000F89, 0 0 70px #ff4da6, 0 0 35px #000F89;
+    }
+  }
+  
+  .start{
+        color:hotpink;
+        border-radius:15px;
+        border-width: 2px;
+        
+        border-style: solid;
+        width:150px;
+        height:150px;
+        font-size:20px;
+        padding:10px
+        
+        
+  }
+  
+  .start:hover{
+        color: white; /* set the font color to white */
+    text-shadow: 0 0 5px #fff, 0 0 10px hotpink, 0 0 15px hotpink, 0 0 20px #00fff5, 0 0 30px #00fff5, 0 0 40px #00fff5, 0 0 50px blueviolet; /* add multiple text shadows to create the neon glow effect */
+    background: linear-gradient(to bottom, #00fff5, #00a3ff); /* set the background to a gradient of two colors */
+    box-shadow: 0 0 5px blueviolet 0 0 25px blueviolet, 0 0 15px hotpink, 0 0 20px hotpink, 0 0 30px #00a3ff, 0 0 15px hotpink, 0 0 15px hotpink, 0 0 15px hotpink* add multiple box shadows to enhance the neon effect;
+    transition: color 2s
+        
+        
+  }
+  .container {
+    display: flex;
+    justify-content: center; /* centers the container horizontally */
+    align-items: center; /* centers the container vertically */
+    height: 100vh; /* sets the container height to the full viewport height */
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* allows columns to wrap onto new lines when the container is too narrow */
+  }
+  
+  .column {
+    flex: 1; /* sets each column to take up equal space within the row */
+    padding: 10px;
+    box-sizing: border-box; /* includes padding and border in the column's total width */
+  }
+  
+  
+  
