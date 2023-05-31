@@ -6,41 +6,67 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Flame Network Settings</h1>
+    <header class="header">
+        <h1>Settings Flame Network V2</h1>
+        <nav class="navbar">
+    
+          <ul class="navbar-links">
+            <li><a href="/public/index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="settings">Settings</a></li>
+            <li><a href="inprogress.html">Games</a></li>
+            <li><a href="inprogress.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    
     <div class="settings">
-      <div class="category">
-        <h2>Example</h2>
-        <ul>
-          <li>Example</li>
-          <li>Example</li>
-        </ul>
-      </div>
-      <div class="category">
-        <h2>Example</h2>
-        <ul>
-          <li>Example</li>
-          <li>Example</li>
-        </ul>
-      </div>
-      <div class="category">
-        <h2>Example</h2>
-        <ul>
-          <li>Example</li>
-          <li>Example</li>
-        </ul>
-      </div>
+        <div class="category">
+            <h2>Tab Cloak</h2>
+            <div class="section-content">
+              <br>
+              <div class="buttons">
+                <input id="title" class="input" placeholder="Title" onkeyup="setTitle(this.value)" />
+                <input id="icon" class="input" placeholder="Favicon" onkeyup="setFavicon(this.value.trim())" />
+              </div>
+              <br>
+              <p class="section-text">Ready Made Cloaks</p>
+              <div class="buttons">
+                <select name="Readymade Cloaks" id="premadecloaks" title="Cloaks">
+                  <option value="search">Google Search</option>
+                  <option value="drive">Google Drive</option>
+                  <option value="youtube">YouTube</option>
+                  <option value="gmail">Gmail</option>
+                  <option value="calendar">Google Calendar</option>
+                  <option value="meets">Google Meet</option>
+                  <option value="classroom">Google Classroom</option>
+                  <option value="canvas">Canvas</option>
+                  <option value="zoom">Zoom</option>
+                  <option value="khan">Khan Academy</option>
+                  <div class="select-buttons">
+                  </div>
+                </select>
+                <button class="button button2" onclick="setCloak()">Set</button>
+                <button class="button button2" onclick="resetTab()">Reset</button>
+              </div>
+            </div>
+          </div>
+      
       <div class="category">
         <h2>Search Engine</h2>
         <div class="dropdown">
-          <button class="dropdown-toggle" id="search-engine-dropdown">Choose Search Engine</button>
+          <button class="dropdown-toggle" id="search-engine-dropdown">Select Search Engine</button>
           <ul class="dropdown-menu" id="search-engine-options">
             <li data-value="https://www.google.com/search?q=%s">Google</li>
             <li data-value="https://www.bing.com/search?q=%s">Bing</li>
+            <li data-value="https://search.brave.com/search?q=s">Brave</li>
             <li data-value="https://www.yahoo.com/search?q=%s">Yahoo</li>
             <li data-value="https://duckduckgo.com/?q=%s">DuckDuckGo</li>
             <li data-value="https://www.startpage.com/search?q=s">StartPage</li>
           </ul>
-        </div>
+        </div><br>
+        <p class="searchenginechoice">Options for the proxy search engine are: <br><br> Google <br> Bing <br> Brave <br> Yahoo <br> DuckDuckGo <br> StartPage</p>
+
       </div>
       
       <!-- JavaScript to Handle Dropdown Selection and Local Storage -->
@@ -64,5 +90,7 @@
           });
         });
       </script>
+        <script src="js/index.js"></script>
+        <script src="js/settings.js"></script>
   </body>
 </html>
