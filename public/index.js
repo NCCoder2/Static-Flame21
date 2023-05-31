@@ -32,6 +32,6 @@ form.addEventListener("submit", async (event) => {
   }
 
   const searchEnginelocalstorage = localStorage.getItem("selectedSearchEngine");;
-  const url = search(address.value, searchEnginelocalstorage);
+  const url = search(searchEnginelocalstorage + address.value);
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
