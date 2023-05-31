@@ -48,7 +48,7 @@
                   <option value="khan">Khan Academy</option>
                   <div class="select-buttons">
                   </div>
-                </select>
+                </select><br>
                 <button class="button button2" onclick="setCloak()">Set</button>
                 <button class="button button2" onclick="resetTab()">Reset</button>
               </div>
@@ -68,8 +68,23 @@
           </ul>
         </div><br>
         <p class="searchenginechoice">Options for the proxy search engine are: <br><br> Google <br> Bing <br> Brave <br> Yahoo <br> DuckDuckGo <br> StartPage</p>
-
+        
       </div>
+      <div class="category">
+        <h2>Panic Key</h2>
+        <div class="setting">
+          <label for="panic-key-input">Key:</label> <br>
+          <input id="panic-key-input" style="width:90%" type="text" value="]" />
+        </div>
+        <div class="setting">
+          <label for="panic-website-input">Website:</label><br>
+          <input id="panic-website-input" style="width:90%" type="text" value="https://classroom.google.com" />
+        </div>
+        <div class="button-container">
+          <button class="panicbtn" onclick="setPanicKey()">Save</button>
+        </div>
+      </div>
+      
       
       <!-- JavaScript to Handle Dropdown Selection and Local Storage -->
       <script>
@@ -94,5 +109,6 @@
       </script>
         <script src="js/index.js"></script>
         <script src="js/settings.js"></script>
+        <script src="js/panic.js"></script>
   </body>
 </html>
