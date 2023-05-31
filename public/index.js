@@ -31,26 +31,23 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
 
-  function detectInputType() {
-    var inputString = document.querySelector('#uv-address').value;
-    var searchEngine = localStorage.getItem("selectedSearchEngine") || 'https://www.google.com/search?q';
-  
-    // Regular expression pattern to match URLs
-    var urlPattern = /^(?:\w+:)?\/\/(?:[^\s./?#]+\.)?[^\s./?#]+\.[^\s]*$/;
-  
-    // Check if the input matches the URL pattern
-    if (urlPattern.test(inputString)) {
-      var url = search(address.value, searchEnginelocalstorage);
-    } else {
-      var url = search(searchEnginelocalstorage + address.value);
-    }
-  
-    return url;
+  var inputString = document.querySelector('#uv-address').value;
+  var searchEngine = localStorage.getItem("selectedSearchEngine") || 'https://www.google.com/search?q';
+
+  // Regular expression pattern to match URLs
+  var urlPattern = /^(?:\w+:)?\/\/(?:[^\s./?#]+\.)?[^\s./?#]+\.[^\s]*$/;
+
+  // Check if the input matches the URL pattern
+  let url;
+  if (urlPattern.test(inputString)) {
+    url = search(address.value, searchEnginelocalstorage);
+  } else {
+    url = search(searchEnginelocalstorage + address.value);
   }
-  
-  // Example usage
-  var url = detectInputType();
+
+  // Use the 'url' value as needed
   console.log(url);
-  
+
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
+
