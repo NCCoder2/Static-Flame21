@@ -31,9 +31,7 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
 
-
-  
-  const searchEngineForProxy = localStorage.getItem("selectedSearchEngine");
+ const searchEngineForProxy = localStorage.getItem("selectedSearchEngine");
 
 if (!isUrl(url)) {
   url = searchEngineForProxy + url;
