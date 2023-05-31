@@ -31,23 +31,14 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
 
-  var inputString = document.querySelector('#uv-address').value;
-  var searchEngine = localStorage.getItem("selectedSearchEngine") || 'https://www.google.com/search?q';
 
-  // Regular expression pattern to match URLs
-  var urlPattern = /^(?:\w+:)?\/\/(?:[^\s./?#]+\.)?[^\s./?#]+\.[^\s]*$/;
+  
+  const searchEngineForProxy = localStorage.getItem("selectedSearchEngine");
 
-  // Check if the input matches the URL pattern
-  let url;
-  if (urlPattern.test(inputString)) {
-    url = search(address.value, searchEnginelocalstorage);
-  } else {
-    url = search(searchEnginelocalstorage + address.value);
-  }
-
-  // Use the 'url' value as needed
-  console.log(url);
-
+if (!isUrl(url)) {
+  url = searchEngineForProxy + url;
+} else if (!(url.startsWith('https://') || url.startsWith('http://'))) {
+  url = 'http://' + url;
+}
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
-
