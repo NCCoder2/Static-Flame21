@@ -31,7 +31,26 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
 
-  const searchEnginelocalstorage = localStorage.getItem("selectedSearchEngine");
-  const url = search(address.value, searchEnginelocalstorage);
+  function detectInputType() {
+    var inputString = document.querySelector('#uv-address').value;
+    var searchEngine = localStorage.getItem("selectedSearchEngine") || 'https://www.google.com/search?q';
+  
+    // Regular expression pattern to match URLs
+    var urlPattern = /^(?:\w+:)?\/\/(?:[^\s./?#]+\.)?[^\s./?#]+\.[^\s]*$/;
+  
+    // Check if the input matches the URL pattern
+    if (urlPattern.test(inputString)) {
+      var url = search(address.value, searchEnginelocalstorage);
+    } else {
+      var url = search(searchEnginelocalstorage + address.value);
+    }
+  
+    return url;
+  }
+  
+  // Example usage
+  var url = detectInputType();
+  console.log(url);
+  
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
