@@ -27,7 +27,7 @@ if (tabData.icon) {
 // Default tab settings
 var settingsDefaultTab = {
   title: "Flame Network Settings",
-  icon: "favicon/favicon-32x32.png",
+  icon: "/favicon/favicon-32x32.png",
 };
 
 // Function to set the document title
@@ -102,9 +102,9 @@ function setFavicon(icon) {
   localStorage.setItem("tab", JSON.stringify(tabData));
 }
 
-function set/cloak() { // applies only to premade /cloaks
-  var /cloak = document.getElementById("premade/cloaks").value; // /cloak seems kind of weird when you spell it out
-  switch (/cloak) {
+function setCloak() { // applies only to premade cloaks
+  var cloak = document.getElementById("premadecloaks").value; // cloak seems kind of weird when you spell it out
+  switch (cloak) {
     case "search": // Google Search
       setTitle("Google Search");
       setFavicon("/cloaks/Google Search.ico");
