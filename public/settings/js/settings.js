@@ -27,7 +27,7 @@ if (tabData.icon) {
 // Default tab settings
 var settingsDefaultTab = {
   title: "Flame Network Settings",
-  icon: "/public/favicon/favicon-32x32.png",
+  icon: "favicon/favicon-32x32.png",
 };
 
 // Function to set the document title
@@ -107,52 +107,52 @@ function setCloak() { // applies only to premade cloaks
   switch (cloak) {
     case "search": // Google Search
       setTitle("Google Search");
-      setFavicon("/public/cloaks/Google Search.ico");
+      setFavicon("cloaks/Google Search.ico");
       location.reload();
       break;
     case "drive": // Google Drive
       setTitle("Google Drive");
-      setFavicon("/public/cloaks/Google Drive.ico");
+      setFavicon("cloaks/Google Drive.ico");
       location.reload();
       break;
     case "youtube": // YouTube 
       setTitle("YouTube");
-      setFavicon("/public/cloaks/YouTube.ico");
+      setFavicon("cloaks/YouTube.ico");
       location.reload();
       break;  
     case "gmail": // Gmail
       setTitle("Gmail");
-      setFavicon("/public/cloaks/Gmail.ico");
+      setFavicon("cloaks/Gmail.ico");
       location.reload();
       break;
     case "calendar": // Google Calendar
       setTitle("Google Calendar");
-      setFavicon("/public/cloaks/Calendar.ico");
+      setFavicon("cloaks/Calendar.ico");
       location.reload();
       break;
     case "meets": // Google Meet
       setTitle("Google Meet");
-      setFavicon("/public/cloaks/Meet.ico");
+      setFavicon("cloaks/Meet.ico");
       location.reload();
       break;
     case "classroom": // Google Classroom
       setTitle("Google Classroom");
-      setFavicon("/public/cloaks/Classroom.png");
+      setFavicon("cloaks/Classroom.png");
       location.reload();
       break;
     case "canvas": // Canvas 
       setTitle("Canvas");
-      setFavicon("/public/cloaks/Canvas.ico");
+      setFavicon("cloaks/Canvas.ico");
       location.reload();
       break;
     case "zoom": // Zoom
       setTitle("Zoom");
-      setFavicon("/public/cloaks/Zoom.ico");
+      setFavicon("cloaks/Zoom.ico");
       location.reload();
       break;
     case "khan": // Khan Academy
       setTitle("Khan Academy"); 
-      setFavicon("/public/cloaks/Khan Academy.ico");
+      setFavicon("cloaks/Khan Academy.ico");
       location.reload();
       break;
   }
